@@ -6,10 +6,14 @@
     "@babel/core": "7.4.3",
     "@babel/plugin-transform-react-jsx-self": "^7.2.0",
     "@svgr/webpack": "4.1.0",
+    "@types/get-value": "^3.0.1",
     "@types/jest": "24.0.13",
     "@types/node": "12.0.4",
     "@types/react": "16.8.19",
     "@types/react-dom": "16.8.4",
+    "@types/react-redux": "^7.0.9",
+    "@types/react-router": "^5.0.1",
+    "@types/react-router-dom": "^4.3.3",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
@@ -51,13 +55,20 @@
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "4.0.0",
+    "redux-persist": "^5.10.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
+    "tslint-react": "^4.0.0",
     "typescript": "3.5.1",
+    "typings-for-css-modules-loader": "^1.7.0",
     "url-loader": "1.1.2",
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
@@ -66,8 +77,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build": "GENERATE_SOURCEMAP=false node scripts/build.js",
+    "test": "node scripts/test.js",
+    "lint": "tslint --project ./tsconfig.json",
+    "fix": "tslint --fix --project ./tsconfig.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -133,5 +146,13 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1",
+    "redux-devtools-extension": "^2.13.8",
+    "ts-import-plugin": "^1.5.5",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.17.0",
+    "tslint-plugin-prettier": "^2.0.1"
   }
 }
