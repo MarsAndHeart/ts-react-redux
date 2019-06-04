@@ -2,23 +2,26 @@ import * as React from 'react';
 import get from 'get-value';
 import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import userAction from '../actions/user';
-import { User } from '../reducers/user';
+import testAction from '../actions/test';
+import { IUser } from '../reducers/user';
 
 interface IProps {
   username: string;
-  setUser: (user: User) => void;
+  getUserFromServer: () => void;
+  setUser: (user: IUser) => void;
 }
 const Test = (props: IProps) => {
-  const changename = (e: object) => {
+  const { username, getUserFromServer } = props;
+  const changename = (e: React.FormEvent<HTMLInputElement>) => {
     props.setUser({
-      name: get(e, 'target.value')
+      name: e.currentTarget.value
     });
   };
   return (
     <div>
-      <div>hello, {props.username}</div>
-      <input value={props.username} onChange={changename} />
+      <div>hello, {username}</div>
+      <input value={username} onChange={changename} />
+      <button onClick={getUserFromServer}>get user</button>
     </div>
   );
 };
@@ -34,7 +37,11 @@ const actionMapping = (dispatch: Dispatch) => {
   return {
     setUser: compose(
       dispatch,
-      userAction.setUser
+      testAction.setUser
+    ),
+    getUserFromServer: compose(
+      dispatch,
+      testAction.getUserFromServer
     )
   };
 };
