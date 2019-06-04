@@ -4,7 +4,7 @@ import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import testAction from '../actions/test';
 import { IUser } from '../reducers/user';
-import {Button} from 'antd-mobile';
+import Button from 'antd-mobile/lib/button';
 
 interface IProps {
   username: string;
