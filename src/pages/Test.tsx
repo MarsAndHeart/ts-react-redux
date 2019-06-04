@@ -4,6 +4,7 @@ import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import testAction from '../actions/test';
 import { IUser } from '../reducers/user';
+import {Button} from 'antd-mobile';
 
 interface IProps {
   username: string;
@@ -21,7 +22,9 @@ const Test = (props: IProps) => {
     <div>
       <div>hello, {username}</div>
       <input value={username} onChange={changename} />
-      <button onClick={getUserFromServer}>get user</button>
+      <div>
+        <Button inline onClick={getUserFromServer}>get user</Button>
+      </div>
     </div>
   );
 };
