@@ -4,8 +4,8 @@
  * 返回 设置user的action
  */
 import get from 'get-value';
-import { IUser } from '../reducers/user';
-import { fetchAPI } from '@common/utils/BasicApiRequist';
+import { IUser } from '@reducers/user';
+import { fetchAPI } from '@utils/BasicApiRequist';
 
 const setUser = (user: IUser) => ({
   type: 'user/set',

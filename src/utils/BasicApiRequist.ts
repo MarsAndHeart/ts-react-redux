@@ -1,5 +1,5 @@
 // 统一的请求方法
-import { getAPIRequestUrl } from '../config/APIConfig';
+import { getAPIRequestUrl } from '@config/APIConfig';
 import { timeout } from './promise';
 
 export async function fetchAPI(

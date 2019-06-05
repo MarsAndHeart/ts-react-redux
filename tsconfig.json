@@ -8,7 +8,10 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@common/*": ["common/*"]
+      "@actions/*": ["actions/*"],
+      "@config/*": ["config/*"],
+      "@reducers/*": ["reducers/*"],
+      "@utils/*": ["utils/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
