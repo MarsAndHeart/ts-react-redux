@@ -2,9 +2,10 @@ import * as React from 'react';
 import get from 'get-value';
 import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import testAction from '../actions/test';
-import { IUser } from '../reducers/user';
+import testAction from '@actions/test';
+import { IUser } from '@reducers/user';
 import Button from 'antd-mobile/lib/button';
+import styles from './style.scss';
 
 interface IProps {
   username: string;
@@ -23,7 +24,12 @@ const Test = (props: IProps) => {
       <div>hello, {username}</div>
       <input value={username} onChange={changename} />
       <div>
-        <Button inline onClick={getUserFromServer}>get user</Button>
+        <Button inline onClick={getUserFromServer}>
+          get user
+        </Button>
+      </div>
+      <div className={styles.test}>
+        <div style={{ width: 100, height: 100, backgroundColor: '#666699' }} />
       </div>
     </div>
   );

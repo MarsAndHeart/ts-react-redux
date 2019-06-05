@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Test from './pages/Test';
+import Home from './pages/Home/index';
+import Test from './pages/Test/index';
 
 const Routers = () => {
   return (
