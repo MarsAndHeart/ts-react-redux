@@ -78,8 +78,16 @@ module.exports = function(webpackEnv) {
         options: shouldUseRelativeAssetPaths ? { publicPath: '../../' } : {},
       },
       {
-        loader: require.resolve('css-loader'),
-        options: cssOptions,
+        // 替换掉原来的css-loader以支持scss+ts的写法
+        loader: require.resolve('typings-for-css-modules-loader'),
+        options: {
+          ...cssOptions,
+
+          modules: true,
+          namedExport: true,
+          camelCase: true,
+          sass: true
+        }
       },
       {
         // Options for PostCSS as we reference these options twice
