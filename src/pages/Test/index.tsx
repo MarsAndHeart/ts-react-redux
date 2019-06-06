@@ -2,8 +2,8 @@ import * as React from 'react';
 import get from 'get-value';
 import { compose, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import testAction from '@actions/test';
-import { IUser } from '@reducers/user';
+import testAction from '@store/user/actions';
+import { IUser } from '@store/user/model';
 import Button from 'antd-mobile/lib/button';
 import styles from './style.scss';
 
@@ -16,7 +16,9 @@ const Test = (props: IProps) => {
   const { username, getUserFromServer } = props;
   const changename = (e: React.FormEvent<HTMLInputElement>) => {
     props.setUser({
-      name: e.currentTarget.value
+      name: e.currentTarget.value,
+      age: 18,
+      sex: ''
     });
   };
   return (

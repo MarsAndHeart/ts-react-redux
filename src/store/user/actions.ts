@@ -4,7 +4,7 @@
  * 返回 设置user的action
  */
 import get from 'get-value';
-import { IUser } from '@reducers/user';
+import { IUser } from './model';
 import { fetchAPI } from '@utils/BasicApiRequist';
 
 const setUser = (user: IUser) => ({
@@ -15,7 +15,9 @@ const setUser = (user: IUser) => ({
 const getUserFromServer = async () => {
   const result = await fetchAPI('000001');
   return setUser({
-    name: get(result, 'result.name')
+    name: get(result, 'result.name'),
+    age: 0,
+    sex: ''
   });
 };
 
