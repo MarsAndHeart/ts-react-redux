@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage/session';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import middleware from './utils/middleware';
-import reducers from './reducers';
+import reducers from './store';
 
 const persistConfig = {
   key: 'root',

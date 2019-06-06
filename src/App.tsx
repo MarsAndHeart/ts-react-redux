@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Routers from './Routers';
-import configureStore from './basicStore';
+import configStore from './configStore';
 
 const App = () => {
-  const { store, persistor } = configureStore();
+  const { store, persistor } = configStore();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

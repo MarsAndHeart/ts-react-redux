@@ -8,9 +8,8 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@actions/*": ["actions/*"],
       "@config/*": ["config/*"],
-      "@reducers/*": ["reducers/*"],
+      "@store/*": ["store/*"],
       "@utils/*": ["utils/*"]
     },
     "allowJs": true,
